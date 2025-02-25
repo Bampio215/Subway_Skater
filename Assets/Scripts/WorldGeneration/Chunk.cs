@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 
 public class Chunk : MonoBehaviour
@@ -7,18 +6,9 @@ public class Chunk : MonoBehaviour
     // Start is called before the first frame update
     public float chunklength;
 
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
     public Chunk ShowChunk()
     {
+        transform.gameObject.BroadcastMessage("OnShowChunk", SendMessageOptions.DontRequireReceiver);
         gameObject.SetActive(true);
         return this;
     }

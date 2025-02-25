@@ -7,6 +7,7 @@ public class JumpingState : BaseState
     public override void Construct()
     {
         motor.verticalVelocity = jumpForce;
+        motor.anim?.SetTrigger("Jump");
 
     }
     public override Vector3 ProcessMotion()
@@ -24,6 +25,15 @@ public class JumpingState : BaseState
     }
     public override void Transition()
     {
+
+        if (InputManager.Instance.SwipeLeft)
+        {
+            motor.ChangeLane(-1);
+        }
+        if (InputManager.Instance.SwipeRight)
+        {
+            motor.ChangeLane(1);
+        }
         if (motor.verticalVelocity < 0)
         {
             motor.ChangeState(GetComponent<FallingState>());

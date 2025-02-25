@@ -16,19 +16,27 @@ public class PlayerMotor : MonoBehaviour
     public float terminalvelocity = 20.0f;
     public CharacterController controller;
     private BaseState state;
+    public Animator anim;
+    private bool isPaused;
 
     // Start is called before the first frame update
     void Start()
     {
         controller = GetComponent<CharacterController>();
+
+        anim = GetComponent<Animator>();
         state = GetComponent<RunningState>();
         state.Construct();
+        isPaused = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        UpdateMotor();
+        if (!isPaused)
+        {
+            UpdateMotor();
+        }
     }
     private void UpdateMotor()
     {
@@ -40,6 +48,10 @@ public class PlayerMotor : MonoBehaviour
 
         //Are we trying to chance state?
         state.Transition();
+
+        //Feed our animator some value
+        anim?.SetBool("IsGrounded", isGrounded);
+        anim?.SetFloat("Speed", Mathf.Abs(moveVector.z));
 
         //Move the player
         controller.Move(moveVector * Time.deltaTime);
@@ -62,7 +74,7 @@ public class PlayerMotor : MonoBehaviour
         }
         else
         {
-
+            r = 0;
         }
         return r;
     }
@@ -84,4 +96,35 @@ public class PlayerMotor : MonoBehaviour
             verticalVelocity = -terminalvelocity;
         }
     }
+    public void PausePlayer()
+    {
+        isPaused = true;
+    }
+    public void ResumePlayer()
+    {
+        isPaused = false;
+    }
+    public void ResetPlayer()
+    {
+        currentLane = 0;
+        transform.position = Vector3.zero;
+        anim?.SetTrigger("Idle");
+        PausePlayer();
+        ChangeState(GetComponent<RunningState>());
+    }
+    public void RespawnPlayer()
+    {
+        ChangeState(GetComponent<RespawnState>());
+        GameManager.Instance.ChangeCamera(GameCamera.Respawn);
+    }
+    public void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        string hitLayerName = LayerMask.LayerToName(hit.gameObject.layer);
+
+        if (hitLayerName == "Death")
+        {
+            ChangeState(GetComponent<DeathState>());
+        }
+    }
+
 }

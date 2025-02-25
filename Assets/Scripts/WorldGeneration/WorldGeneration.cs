@@ -16,13 +16,11 @@ public class WorldGeneration : MonoBehaviour
 
     [SerializeField] private List<GameObject> chunkPrefab;
     [SerializeField] private Transform cameraTransform;
-    // Start is called before the first frame update
-    #region DELETE GAME $$
+
     private void Awake()
     {
         ResetWorld();
     }
-    #endregion
     void Start()
     {
         //Check if we have an empty chunkPrefab list
@@ -38,13 +36,7 @@ public class WorldGeneration : MonoBehaviour
             Debug.Log("World");
         }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        ScanPosition();
-    }
-    private void ScanPosition()
+    public void ScanPosition()
     {
         float cameraZ = cameraTransform.position.z;
         Chunk lastChunk = activeChunks.Peek();

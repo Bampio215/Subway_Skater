@@ -38,7 +38,7 @@ public class RunningState : BaseState
         }
         if (InputManager.Instance.SwipeDown)
         {
-
+            motor.ChangeState(GetComponent<SlidingState>());
         }
     }
 }

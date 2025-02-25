@@ -1,31 +1,34 @@
 
 using UnityEngine;
 
-public class SlipingState : BaseState
+public class SlidingState : BaseState
 {
     public float slideDuration = 1.0f;
 
     //Collider logic 
     private Vector3 initialCenter;
-    private float initalSize;
+    private float initialSize;
 
     private float slideStart;
 
     public override void Construct()
     {
+        motor.anim?.SetTrigger("Slide");
         slideStart = Time.time;
 
-        initalSize = motor.controller.height;
+        initialSize = motor.controller.height;
         initialCenter = motor.controller.center;
 
-        motor.controller.height = initalSize * 0.5f;
+        motor.controller.height = initialSize * 0.5f;
         motor.controller.center = initialCenter * 0.5f;
     }
 
     public override void Destruct()
     {
-        motor.controller.height = initalSize;
+
+        motor.controller.height = initialSize;
         motor.controller.center = initialCenter;
+        motor.anim?.SetTrigger("Running");
     }
 
     public override void Transition()
@@ -44,7 +47,20 @@ public class SlipingState : BaseState
         }
         if (InputManager.Instance.SwipeUp)
         {
-            motor.ChangeState(GetComponent<FallingState>());
+            motor.ChangeState(GetComponent<JumpingState>());
         }
+        if (Time.time - slideStart > slideDuration)
+        {
+            motor.ChangeState(GetComponent<RunningState>());
+        }
+    }
+    public override Vector3 ProcessMotion()
+    {
+        Vector3 m = Vector3.zero;
+
+        m.x = motor.SnapToLane();
+        m.y = -1.0f;
+        m.z = motor.baseRunSpeed;
+        return m;
     }
 }

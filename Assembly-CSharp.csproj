@@ -62,17 +62,52 @@
     <Analyzer Include="C:\Users\admin\.vscode\extensions\visualstudiotoolsforunity.vstuc-1.1.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\PlayerMotor\State\RespawnState.cs" />
+    <Compile Include="Assets\Scripts\GameFlow\GameState\GameStateDeath.cs" />
     <Compile Include="Assets\Scripts\Inputs\RunnerInputAction.cs" />
+    <Compile Include="Assets\Scripts\GameFlow\GameState\GameStateGame.cs" />
     <Compile Include="Assets\Scripts\WorldGeneration\WorldGeneration.cs" />
     <Compile Include="Assets\Scripts\WorldGeneration\SceneChunkGeneration.cs" />
     <Compile Include="Assets\Scripts\PlayerMotor\State\RunningState.cs" />
+    <Compile Include="Assets\Scripts\PlayerMotor\State\SlidingState.cs" />
     <Compile Include="Assets\Scripts\WorldGeneration\Chunk.cs" />
-    <Compile Include="Assets\Scripts\Inputs\InputManager.cs" />
-    <Compile Include="Assets\Scripts\PlayerMotor\PlayerMotor.cs" />
-    <Compile Include="Assets\Scripts\PlayerMotor\State\BaseState.cs" />
     <Compile Include="Assets\Scripts\PlayerMotor\State\JumpingState.cs" />
     <Compile Include="Assets\Scripts\PlayerMotor\State\FallingState.cs" />
-    <Compile Include="Assets\Scripts\PlayerMotor\State\SlidingState.cs" />
+    <Compile Include="Assets\Scripts\Inputs\InputManager.cs" />
+    <Compile Include="Assets\Scripts\GameFlow\GameState\GameState.cs" />
+    <Compile Include="Assets\Scripts\PlayerMotor\State\DeathState.cs" />
+    <Compile Include="Assets\Scripts\GameFlow\GameState\GameStateInit.cs" />
+    <Compile Include="Assets\Scripts\WorldGeneration\SnowFloor.cs" />
+    <Compile Include="Assets\Scripts\PlayerMotor\PlayerMotor.cs" />
+    <Compile Include="Assets\Scripts\PlayerMotor\State\BaseState.cs" />
+    <Compile Include="Assets\Scripts\GameFlow\GameManager.cs" />
+    <Compile Include="Assets\Scripts\GamePlay\Fish.cs" />
+    <Compile Include="Assets\Scripts\GameStats.cs" />
+    <Compile Include="Assets\Scripts\Save\SaveState.cs" />
+    <Compile Include="Assets\Scripts\Save\SaveManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
+    <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
+    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -1011,8 +1046,16 @@
       <HintPath>Library\ScriptAssemblies\Unity.ShaderGraph.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Cinemachine">
+      <HintPath>Library\ScriptAssemblies\Cinemachine.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.Burst">
       <HintPath>Library\ScriptAssemblies\Unity.Burst.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="com.unity.cinemachine.editor">
+      <HintPath>Library\ScriptAssemblies\com.unity.cinemachine.editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Universal.Editor">
