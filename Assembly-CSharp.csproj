@@ -66,6 +66,8 @@
     <Compile Include="Assets\Scripts\GameFlow\GameState\GameStateDeath.cs" />
     <Compile Include="Assets\Scripts\Inputs\RunnerInputAction.cs" />
     <Compile Include="Assets\Scripts\GameFlow\GameState\GameStateGame.cs" />
+    <Compile Include="Assets\Scripts\Shop\Hat.cs" />
+    <Compile Include="Assets\Scripts\Save\SaveManager.cs" />
     <Compile Include="Assets\Scripts\WorldGeneration\WorldGeneration.cs" />
     <Compile Include="Assets\Scripts\WorldGeneration\SceneChunkGeneration.cs" />
     <Compile Include="Assets\Scripts\PlayerMotor\State\RunningState.cs" />
@@ -75,16 +77,17 @@
     <Compile Include="Assets\Scripts\PlayerMotor\State\FallingState.cs" />
     <Compile Include="Assets\Scripts\Inputs\InputManager.cs" />
     <Compile Include="Assets\Scripts\GameFlow\GameState\GameState.cs" />
+    <Compile Include="Assets\Scripts\GameStats.cs" />
+    <Compile Include="Assets\Scripts\Save\SaveState.cs" />
     <Compile Include="Assets\Scripts\PlayerMotor\State\DeathState.cs" />
     <Compile Include="Assets\Scripts\GameFlow\GameState\GameStateInit.cs" />
     <Compile Include="Assets\Scripts\WorldGeneration\SnowFloor.cs" />
     <Compile Include="Assets\Scripts\PlayerMotor\PlayerMotor.cs" />
     <Compile Include="Assets\Scripts\PlayerMotor\State\BaseState.cs" />
+    <Compile Include="Assets\Scripts\GameFlow\GameState\GameStateShop.cs" />
+    <Compile Include="Assets\Scripts\Shop\HatLogic.cs" />
     <Compile Include="Assets\Scripts\GameFlow\GameManager.cs" />
     <Compile Include="Assets\Scripts\GamePlay\Fish.cs" />
-    <Compile Include="Assets\Scripts\GameStats.cs" />
-    <Compile Include="Assets\Scripts\Save\SaveState.cs" />
-    <Compile Include="Assets\Scripts\Save\SaveManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

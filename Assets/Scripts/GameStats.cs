@@ -60,7 +60,7 @@ public class GameStats : MonoBehaviour
     }
     public string ScoreToText()
     {
-        return score.ToString("0000000");
+        return (score - 1).ToString("0000000");
     }
     public string FishToText()
     {
