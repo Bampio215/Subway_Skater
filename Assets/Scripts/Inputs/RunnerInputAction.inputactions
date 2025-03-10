@@ -1,5 +1,5 @@
 {
-    "name": "RunerInputAction",
+    "name": "RunnerInputAction",
     "maps": [
         {
             "name": "Gameplay",
@@ -90,7 +90,7 @@
                 {
                     "name": "",
                     "id": "4fa4d19e-dad4-4bb6-81d9-f2aa9e5c7db8",
-                    "path": "<Touchscreen>/touch*/tap",
+                    "path": "<Touchscreen>/touch*/press",
                     "interactions": "",
                     "processors": "",
                     "groups": "Mobile",
@@ -123,7 +123,7 @@
                 {
                     "name": "",
                     "id": "6555bc73-5c48-410c-a651-b258b072d192",
-                    "path": "<Touchscreen>/touch*/tap",
+                    "path": "<Touchscreen>/touch*/press",
                     "interactions": "",
                     "processors": "",
                     "groups": "Mobile",

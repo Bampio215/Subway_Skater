@@ -25,7 +25,6 @@ public class SlidingState : BaseState
 
     public override void Destruct()
     {
-
         motor.controller.height = initialSize;
         motor.controller.center = initialCenter;
         motor.anim?.SetTrigger("Running");

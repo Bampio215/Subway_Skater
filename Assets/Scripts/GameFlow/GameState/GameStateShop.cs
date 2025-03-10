@@ -22,10 +22,10 @@ public class GameStateShop : GameState
         hats = Resources.LoadAll<Hat>("Hat");
         shopUI.SetActive(true);
 
+        totalFish.text = "x" + SaveManager.Instance.save.Fish.ToString("000");
+        curentHatName.text = hats[SaveManager.Instance.save.currentHatindex].ItemName;
         if (!isInit)
         {
-            totalFish.text = "x" + SaveManager.Instance.save.Fish.ToString("000");
-            curentHatName.text = hats[SaveManager.Instance.save.currentHatindex].ItemName;
             PopulateShop();
             isInit = true;
         }
@@ -37,6 +37,7 @@ public class GameStateShop : GameState
     }
     private void PopulateShop()
     {
+        Debug.Log("Oki");
         for (int i = 0; i < hats.Length; i++)
         {
             int index = i;
@@ -72,14 +73,16 @@ public class GameStateShop : GameState
         //If we don't have it, can we buy it?
         else if (hats[i].itemPrice <= SaveManager.Instance.save.Fish)
         {
+            Debug.Log("Okiee");
             SaveManager.Instance.save.Fish -= hats[i].itemPrice;
             SaveManager.Instance.save.UnlockedhatFlag[i] = 1;
             SaveManager.Instance.save.currentHatindex = i;
             curentHatName.text = hats[i].ItemName;
             hatLogic.SelectHat(i);
-            totalFish.text = SaveManager.Instance.save.Fish.ToString("000");
-            hatContainer.GetChild(i).transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = "";
+            totalFish.text = "x" + SaveManager.Instance.save.Fish.ToString("000");
             SaveManager.Instance.Save();
+            hatContainer.GetChild(i).transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = "";
+
         }
         //Don't have it, can't buy it
         else

@@ -251,6 +251,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3674873438683531225}
     m_Modifications:
+    - target: {fileID: 5322688815331695016, guid: 32d12b87be4de0645b9e8cb4b59b3de0, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0cfb8b9577c0b634ebdca418e8bcab1a, type: 2}
     - target: {fileID: 5322688815333689192, guid: 32d12b87be4de0645b9e8cb4b59b3de0, type: 3}
       propertyPath: m_Name
       value: Rock
@@ -329,6 +333,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3674873438683531225}
     m_Modifications:
+    - target: {fileID: 5322688815331695016, guid: 32d12b87be4de0645b9e8cb4b59b3de0, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0cfb8b9577c0b634ebdca418e8bcab1a, type: 2}
     - target: {fileID: 5322688815333689192, guid: 32d12b87be4de0645b9e8cb4b59b3de0, type: 3}
       propertyPath: m_Name
       value: Rock (1)
@@ -471,6 +479,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RampWood
       objectReference: {fileID: 0}
+    - target: {fileID: 6994440944660797386, guid: 0f8b609f0f15b11459cf688fb65998dd, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0cfb8b9577c0b634ebdca418e8bcab1a, type: 2}
     - target: {fileID: 8334718226184983403, guid: 0f8b609f0f15b11459cf688fb65998dd, type: 3}
       propertyPath: m_LocalPosition.z
       value: -1.144

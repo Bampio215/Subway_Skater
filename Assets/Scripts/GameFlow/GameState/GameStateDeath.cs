@@ -20,7 +20,6 @@ public class GameStateDeath : GameState
 
         deathTime = Time.time;
         DeathUI.SetActive(true);
-        completionCircle.gameObject.SetActive(true);
         //Prior to saving, set the highscore if needed
         if (SaveManager.Instance.save.Highscore < (int)GameStats.Instance.score)
         {
@@ -56,7 +55,12 @@ public class GameStateDeath : GameState
     public void ResumeGame()
     {
         brain.ChangeState(GetComponent<GameStateGame>());
+        completionCircle.gameObject.SetActive(false);
         GameManager.Instance.motor.RespawnPlayer();
+    }
+    public void EnableRevive()
+    {
+        completionCircle.gameObject.SetActive(true);
     }
     public void ToMenu()
     {

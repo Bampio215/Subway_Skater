@@ -15,4 +15,4 @@ MonoBehaviour:
   ItemName: Test
   itemPrice: 5
   Thumbnail: {fileID: 21300000, guid: 4d83ad9ff812f744793e6eb8f83c2f9b, type: 3}
-  Model: {fileID: 100000, guid: 1ce613419e4995747b834a066550c55d, type: 3}
+  Model: {fileID: 6214066941607702470, guid: b816e6ce7d71da947a10115bac98fdb7, type: 3}
